@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hNK-io-AIB">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QRCodeLocationViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2m1-xH-CdN">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="801"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zu-gU-gw3">
+                                <rect key="frame" x="152" y="809" width="89" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Rescan"/>
+                                <connections>
+                                    <action selector="rescanTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o3m-Jy-RIG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2m1-xH-CdN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6wC-Xt-Inp"/>
+                            <constraint firstAttribute="bottom" secondItem="5Zu-gU-gw3" secondAttribute="bottom" constant="8" id="Mba-Lt-86M"/>
+                            <constraint firstItem="5Zu-gU-gw3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="ZC3-Pf-QV7"/>
+                            <constraint firstItem="5Zu-gU-gw3" firstAttribute="top" secondItem="2m1-xH-CdN" secondAttribute="bottom" constant="8" id="fcQ-jA-oGO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Zu-gU-gw3" secondAttribute="trailing" constant="152" id="ibQ-vc-74a"/>
+                            <constraint firstItem="2m1-xH-CdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="onU-E7-f0S"/>
+                            <constraint firstItem="2m1-xH-CdN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v0r-Ql-EAz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Yj-32-fUm"/>
+                    <connections>
+                        <outlet property="rescanButton" destination="5Zu-gU-gw3" id="q9p-bc-QFK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055.7251908396945" y="-27.464788732394368"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Ar3-Qi-Oxy">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="KqI-gR-0Zg" customClass="MapViewController" customModule="QRCodeLocationViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZGd-dK-DKT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xh-ew-PQD">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h9t-dr-Kdx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h9t-dr-Kdx" firstAttribute="bottom" secondItem="8xh-ew-PQD" secondAttribute="bottom" id="T2c-ZI-ktt"/>
+                            <constraint firstItem="8xh-ew-PQD" firstAttribute="top" secondItem="h9t-dr-Kdx" secondAttribute="top" id="kVM-Bt-Ktr"/>
+                            <constraint firstItem="h9t-dr-Kdx" firstAttribute="trailing" secondItem="8xh-ew-PQD" secondAttribute="trailing" id="mcs-Cj-QTn"/>
+                            <constraint firstItem="8xh-ew-PQD" firstAttribute="leading" secondItem="h9t-dr-Kdx" secondAttribute="leading" id="p9H-Uo-Qct"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="8xh-ew-PQD" id="yTM-AG-Qc6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpb-W3-CqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.4045801526718" y="-27.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c5c-QW-FGG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hNK-io-AIB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dfw-Tb-bgj">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lWs-NZ-3hn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLV-n9-2xD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
